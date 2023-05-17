@@ -1,0 +1,47 @@
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#     name: azure-devops-svc
+#     namespace: azure-devops
+# ---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+    name:  create-deployments
+    namespace: azure-devops
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - deployments
+  - pods/*
+  - services
+  - secrets
+  - namespaces
+  - networkpolicies
+  - namespaces
+  - pods
+  - configmaps
+  - horizontalpodautoscalers
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - apply
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: azuredevops-binding
+  namespace: azure-devops
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: create-deployments
+  
+subjects:
+- kind: User
+  name: d2ebaab4-8793-4d27-8246-d748098c58f9

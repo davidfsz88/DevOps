@@ -1,0 +1,4 @@
+- devopssp: allows pipelines agents to deploy resources
+- noendpoint: fixes endpoint auth by pods
+- regedit: fixes edit exploit
+- reloader: auto reloads deployments upon configmap/secret update

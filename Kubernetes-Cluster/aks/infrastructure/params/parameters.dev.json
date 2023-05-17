@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "value": "aks"
+    },
+    "env": {
+      "value": "dev"
+    },
+
+
+    "addressSpace": {
+      "value": "10.160.0.0/16"
+    },
+    "aksSubnet": {
+      "value": "10.160.0.0/22"
+    },
+    "agicSubnet": {
+      "value": "10.160.4.0/22"
+    },
+    "bastionSubnet": {
+      "value": "10.160.8.0/22"
+    },
+
+
+    "clusterAdminGroupId": {
+      "value": "6b90324e-7531-4641-ac17-db5f2847bdb4"
+    },
+    "k8sVersion": {
+      "value": "1.21.7"
+    },
+    "poolCount": {
+      "value": 1
+    },
+    "poolVmSize": {
+      "value": "Standard_B4ms"
+    },
+    "akslimits": {
+      "value": {
+        "min": 1,
+        "max": 3
+      }
+    },
+
+
+    "appgwSku": {
+      "value": "Standard_v2"
+    },
+
+
+    "agentUsername": {
+      "value": "aksdev"
+    },
+    "vpnAddress": {
+      "value": "10.169.0.0/16"
+    }
+    
+  }
+}

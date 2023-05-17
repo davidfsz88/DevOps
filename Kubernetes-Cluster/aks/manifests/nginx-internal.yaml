@@ -1,0 +1,5 @@
+controller:
+  service:
+    loadBalancerIP: 10.160.0.249 # Dependences on the environment 10.160 (Dev), 10.161 (Staging) and 10.162 (Prod)
+    annotations:
+      service.beta.kubernetes.io/azure-load-balancer-internal: "true"
